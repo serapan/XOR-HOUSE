@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimal-ui,initial-scale=1" />
+    <title>Cheapset</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-cookies.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/test.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <script src="js/app/home.js"></script>
+    <!-- Bootstrap CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body ng-app="homeApp" ng-controller="homeController">
+
+    <div class="grid" id="grid">
+
+        <div class="image"></div>
+
+        <div class="header">
+            <div class="menu"><img onclick="window.location.href=window.location.origin + '/tryM'" width="50px" height="50px" src="img/mapsearch.svg"></div>
+            <div class="logo"></div>
+            <div class="account">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                        <i class="far fa-user fa-2x"></i><b class="caret"></b></a>
+                    <ul ng-if="!isAuthenticated()" class="dropdown-menu">
+                        <li><a class="c" href="#" data-toggle="modal" data-target="#login-modal" tabindex="-1">LOGIN</a></li>
+                        <li ><a tabindex="-1" href="signup">SIGN UP</a></li>
+                    </ul>
+                    <ul ng-if="isAuthenticated()" class="dropdown-menu">
+                        <li ><a ng-click="logout()" tabindex="-1" href="#">LOG OUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div ng-controller="LoginController" class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="loginmodal-container">
+                    <h1>Login to Your Account</h1><br>
+                    <form ng-submit="Submit()">
+                        <input type="text" name="user" ng-model="user" placeholder="Username" required>
+                        <input type="password" name="pass" ng-model="pass" placeholder="Password" required>
+                        <input type="submit" id='submit' name="login" class="login loginmodal-submit" value="Login">
+                    </form>
+                    <div class="login-help">
+                        <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+            <img src="img/final_transparent.png" style="width:500px; height: 200px">
+            <div  class="search-box" style="margin-bottom: 300px;">
+                <input ng-model='searchparam' class="search-bar" type="text" placeholder="Ladies">
+                <a  class="search-btn" href={{'/tryP?category=all&search='+searchparam}}>
+                    <i class="fas fa-search fa-lg"></i>
+                </a>
+            </div>
+            <div class="bubbleWrapper">
+                <div class="bubble" ng-repeat="(key, stat) in stats">
+                    <h4>{{stat}} {{key}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="categories">
+            <a ng-click="showCategories('laptop')" class="card computers">
+                <div class="overlay"></div>
+                <div class="circle">
+                    <img width="79px" height="87px" src="img/laptop.svg">
+                </div>
+                <p>Computers</p>
+            </a>
+
+
+            <a ng-click="showCategories('phone')" class="card phones">
+                <div class="overlay"></div>
+                <div class="circle">
+                    <img width="79px" height="87px" src="img/phone.svg">
+                </div>
+                <p>Phones</p>
+            </a>
+
+
+            <a ng-click="showCategories('tablet')" class="card tablets">
+                <div class="overlay"></div>
+                <div class="circle">
+
+                    <img width="79px" height="87px" src="img/tablet.svg">
+
+                </div>
+                <p>Tablets</p>
+            </a>
+
+
+            <a ng-click="showCategories('tv')" class="card tvs">
+                <div class="overlay"></div>
+                <div class="circle">
+
+                    <img width="79px" height="87px" src="img/tv.svg">
+
+                </div>
+                <p>TVs</p>
+            </a>
+
+
+            <a ng-click="showCategories('camera')" class="card cameras">
+                <div class="overlay"></div>
+                <div class="circle">
+
+                    <img width="79px" height="87px" src="img/photo-camera.svg">
+
+                </div>
+                <p>Cameras</p>
+            </a>
+
+
+            <a ng-click="showCategories('gaming')" class="card gaming">
+                <div class="overlay"></div>
+                <div class="circle">
+
+                    <img width="79px" height="87px" src="img/gamepad.svg">
+
+                </div>
+                <p>Gaming</p>
+            </a>
+
+
+            <a ng-click="showCategories('all')" class="card peripherals">
+                <div class="overlay"></div>
+                <div class="circle">
+                    <img width="120px" height="120px" src="img/allproducts.svg">
+                </div>
+                <p>All Products</p>
+            </a></div>
+        <div class="footer">
+            <div><a href="about">About</a></div>
+            <div><a href="statistics">Statistics</a></div>
+            <div><a href="api">API</a></div>
+        </div>
+    </div>
+</body>
+</html>

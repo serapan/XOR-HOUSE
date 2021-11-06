@@ -1,0 +1,364 @@
+body {
+    display: grid;
+    grid-template-areas:
+            "header header header"
+            "search search search"
+            "nav article ads"
+            "footer footer footer";
+    grid-template-rows: 50px 100px 1fr 50px;
+    grid-template-columns: minmax(200px, 20%) 1fr 15%;
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 0;
+    background: rgba(247,247,247,0.72);
+}
+
+#search {
+    grid-area: search;
+    display: grid;
+    align-content: center;
+}
+#mainArticle {
+    grid-area: article;
+    display: grid;
+    grid-template-rows: 1fr 80px;
+    grid-template-areas:
+                "products"
+                "button";
+    justify-items: center;
+    align-items: center;
+}
+#filters {
+    grid-area: nav;
+    background: #ffffff;
+    padding: 20px;
+    margin-left:20px;
+    display: grid;
+    grid-gap: 0;
+    grid-auto-flow: row;
+    justify-items: center;
+    box-shadow: 5px 10px 18px #888888;
+    max-height: 500px;
+}
+
+#filters .filter-title {
+    font-weight: bolder;
+    font-size: smaller;
+    font-family: 'Anton', sans-serif;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 200px;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+#siteAds {
+    grid-area: ads;
+    background: url("../img/vbanner.png");
+    background-repeat: no-repeat;
+    backface-visibility: visible;
+    background-position: top;
+}
+
+.search-box {
+    height: 45px;
+    width: 60%;
+    max-width: 500px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.search-btn {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+
+.search-bar {
+    margin-left: 20px;
+    margin-top: 3px;
+    font-size: 20px;
+    line-height: 40px;
+    width: 80%;
+    max-width: 500px;
+}
+/* Stack the layout on small devices/viewports. */
+
+.products {
+    grid-area: products;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+.productCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-family: "Open Sans", sans-serif;
+    max-width: 300px;
+    margin: auto auto 5%;
+    width: 254px;
+    height: 440px;
+    text-align: center;
+    position: relative;
+}
+
+.productCard .circle {
+    margin-top: 5px;
+}
+
+.productCard .modelName {
+    height: 70px;
+    margin-left: 10px;
+    margin-right:10px;
+    align-content: center;
+}
+
+.productCard .specs {
+    height: 15px;
+    color: #686868;
+    margin: inherit;
+    margin-right: 5%;
+}
+
+.productCard:hover {
+    background-color: rgba(218, 218, 218, 0.42);
+}
+
+.showMore {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    grid-area: button;
+    background-color: white;
+    height: 40px;
+    width: 100%;
+}
+
+.showMore .seeMore {
+    font-family: 'Open Sans', sans-serif;
+    color: #9c9c9c;
+    text-align: center;
+    padding: 10px;
+}
+
+.showMore:hover {
+    background-color: rgba(218, 218, 218, 0.43);
+}
+
+.showMore .seeMore:hover {
+    cursor: default;
+}
+
+.star {
+    color: orange;
+}
+
+#filterPopUp {
+    height: 100vh; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Stay on top */
+    float: right;
+    top: 0;
+    left: 0;
+    background-color: #dadada; /* Black*/
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    display: grid;
+    grid-gap: 0;
+    grid-auto-flow: row;
+    justify-items: center;
+    overflow: scroll;
+}
+
+
+/* Position and style the close button (top right corner) */
+#filterPopUp .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+#filtersButton {
+    display: none;
+    height: 30px;
+    width: 100px;
+    background-color: white;
+    color: lightgrey;
+    text-align: center;
+    padding-top: 15px;
+    float: right;
+}
+
+#productPrice {
+    display: none;
+    background-color: dodgerblue;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Anton', sans-serif;
+    padding-top: 5px;
+}
+
+.from {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 8px;
+    font-size: smaller;
+    font-family: "Courier New", monospace;
+}
+
+.form-control {
+    width: 60%;
+    max-width: 480px;
+    margin: 20px 0 10px 20px;
+}
+
+.vertical-menu {
+    width: 100%;
+    max-width: 290px;
+    margin: auto;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #d97d39;
+    color: white;
+}
+
+.priceFilt {
+    width: 70px;
+    height: 20px;
+    margin: 0 20px 0 20px;
+}
+
+@media all and (max-width: 1200px) {
+    body {
+        grid-template-rows: 50px 100px 1fr 15% 50px;
+        grid-template-areas:
+                "header header header"
+                "search search search"
+                "nav article article"
+                "ads ads ads"
+                "footer footer footer";
+    }
+
+    #siteAds {
+        grid-area: ads;
+        background: url("../img/hbanner.png");
+        background-repeat: no-repeat;
+        backface-visibility: visible;
+        background-position: top;
+    }
+}
+
+@media all and (max-width: 720px) {
+    body {
+        grid-template-rows: 50px 100px 1fr 15% 60px;
+        grid-template-areas:
+                "header header header"
+                "search search search"
+                "nav article article"
+                "ads ads ads"
+                "footer footer footer";
+    }
+
+    #siteAds {
+        grid-area: ads;
+        background: url("../img/hbanner.png");
+        background-repeat: no-repeat;
+        backface-visibility: visible;
+        background-position: top;
+    }
+}
+
+@media all and (max-width: 680px) {
+    body {
+        grid-template-areas:
+                "header"
+                "search"
+                "article"
+                "ads"
+                "nav"
+                "footer";
+        grid-template-rows: 50px 150px 1fr  35% 1fr 120px;
+        grid-template-columns: 1fr;
+    }
+
+    #siteAds {
+        grid-area: ads;
+        background: url("../img/sbanner.png");
+        background-repeat: no-repeat;
+        backface-visibility: visible;
+        background-position: top;
+        width: 100%;
+    }
+
+    #filters {
+        margin-right: 20px;
+    }
+
+    #filtersButton{
+        display: block;
+    }
+
+    #filters {
+        display: none;
+    }
+
+    #search {
+        justify-content: center;
+    }
+
+    .search-box {
+        height: 45px;
+        width: 100%;
+        max-width: 500px;
+        margin-right: 20px;
+        margin-left: 0px;
+    }
+}

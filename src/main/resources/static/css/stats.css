@@ -1,0 +1,47 @@
+body {
+    display: grid;
+    grid-template-areas:
+            "header header header"
+            "center center center"
+            "footer footer footer";
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: minmax(200px, 20%) 1fr 15%;
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 0;
+    background: rgba(247,247,247,0.72);
+}
+
+
+#pageHeader {
+    grid-area: header;
+}
+#pageFooter {
+    grid-area: footer;
+}
+#search {
+    grid-area: search;
+    display: grid;
+    align-content: center;
+}
+
+#center {
+    grid-area: center;
+    display: grid;
+    grid-template-areas:
+            "stats"
+            "diagram";
+    grid-template-rows: 1fr 6fr;
+    height: 100vh;
+    margin:0;
+}
+
+#diagram {
+    grid-area: diagram;
+    text-align: center;
+}
+
+#stats {
+    grid-area: stats;
+    margin: 0 20% 0 20%;
+}

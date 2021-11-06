@@ -1,0 +1,147 @@
+.computers {
+  --bg-color: #ffd861;
+  --bg-color-light: #ffeeba;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(255, 215, 97, 0.48);
+}
+
+.phones {
+  --bg-color: #B8F9D3;
+  --bg-color-light: #e2fced;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(184, 249, 211, 0.48);
+}
+
+.tablets {
+  --bg-color: #CEB2FC;
+  --bg-color-light: #F0E7FF;
+  --text-color-hover: #fff;
+  --box-shadow-color: rgba(206, 178, 252, 0.48);
+}
+
+.tvs {
+  --bg-color: #DCE9FF;
+  --bg-color-light: #f1f7ff;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(220, 233, 255, 0.48);
+}
+
+.cameras {
+  --bg-color: #ff434d;
+  --bg-color-light: rgba(255, 153, 159, 0.75);
+  --text-color-hover: #fffbfd;
+  --box-shadow-color: rgba(255, 158, 124, 0.48);
+}
+
+.gaming {
+  --bg-color: #2cacff;
+  --bg-color-light: #b3dcff;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(120, 196, 255, 0.48);
+}
+
+.peripherals {
+  --bg-color: #4689a7;
+  --bg-color-light: #509cbe;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(70, 137, 167, 0.48);
+}
+
+.categories .card {
+  width: 180px;
+  height: 281px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.categories .card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.categories .card:hover .overlay {
+  transform: scale(4) translateZ(0);
+}
+
+.categories .card:hover .circle {
+  border-color: var(--bg-color-light);
+  background: var(--bg-color);
+}
+
+.categories .card:hover .circle:after {
+  background: var(--bg-color-light);
+}
+
+.categories .card:hover p {
+  color: var(--text-color-hover);
+}
+
+.categories .card:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+    0 15px 24px var(--box-shadow-color);
+}
+
+.categories .card p {
+  font-size: 17px;
+  color: #4C5656;
+  margin-top: 30px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
+
+.categories .circle {
+  width: 131px;
+  height: 131px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.categories .circle:after {
+  content: "";
+  width: 118px;
+  height: 118px;
+  display: block;
+  position: absolute;
+  background: var(--bg-color);
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+  transition: opacity 0.3s ease-out;
+}
+
+.categories .circle img {
+  z-index: 10000;
+  transform: translateZ(0);
+}
+
+.categories .overlay {
+  width: 118px;
+  position: absolute;
+  height: 118px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 48px;
+  left: 36px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+

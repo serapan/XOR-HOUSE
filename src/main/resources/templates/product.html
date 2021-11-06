@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cheapset</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Anton" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/mapstores.css" rel="stylesheet">
+    <link href="css/product.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-cookies.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9L5RH8F1FMO_xAAnK1x7844Zh-vBO4ok" ></script>
+    <script src="js/app/printProduct.js"></script>
+    <!-- Bootstrap CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="printProductApp" ng-controller="ProductController">
+    <div class="header">
+        <div class="menu"><img onclick="window.location.href=window.location.origin + '/tryM'" width="50px" height="50px" src="img/mapsearch.svg"></div>
+        <div class="logo"><img onclick="window.location.href=window.location.origin + '/'" src="img/final_transparent.png" style="width:150px; height: 50px"></div>
+        <div class="account">
+            <div class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                    <i class="far fa-user fa-2x"></i><b class="caret"></b></a>
+                <ul ng-if="!isAuthenticated()" class="dropdown-menu">
+                    <li><a class="c" href="#" data-toggle="modal" data-target="#login-modal" tabindex="-1">LOGIN</a></li>
+                    <li ><a tabindex="-1" href="signup">SIGN UP</a></li>
+                </ul>
+                <ul ng-if="isAuthenticated()" class="dropdown-menu">
+                    <li ><a ng-click="logout()" tabindex="-1" href="#">LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="LoginController" class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+                <form ng-submit="Submit()">
+                    <input type="text" name="user" ng-model="user" placeholder="Username" required>
+                    <input type="password" name="pass" ng-model="pass" placeholder="Password" required>
+                    <input type="submit" id='submit' name="login" class="login loginmodal-submit" value="Login">
+                </form>
+                <div class="login-help">
+                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="photo">
+            <img src="img/{{product.category}}.svg">
+        </div>
+        <div class="vl"></div>
+        <div class="title">
+            <h1>{{product.name}}</h1>
+        </div>
+        <div class = "specs">
+            <div class="description">
+                <h3 style="color: #404040;">Περιγραφή:</h3><br>
+                <h4>{{product.description}}</h4>
+                <br>
+            </div>
+            <div class="chars">
+                <h3 style="color: #404040;">Χαρακτηριστικά:</h3><br>
+                <div ng-repeat="(key, data) in product.extraData">
+                    <div ng-if="key === 'rating'">
+                        <h4>RATING:
+                            <i ng-repeat="n in range(data)" class="fas fa-star star"></i><i ng-repeat="n in range(5 - Math.floor(data))" class="far fa-star star"></i>
+                        </h4>
+                    </div>
+                    <div ng-if="key !== 'rating'">
+                        <h4>{{key | uppercase}}: {{data}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="rate">
+                <h4>Rate This Product</h4>
+                <form ng-submit="mySubmit(myrating)">
+                    <select ng-model="myrating">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="shops" ng-controller="MapController">
+        <div id=map></div>
+        <div id="stores">
+            <div ng-repeat="store in stores">
+                <div class="storeInfo" ng-click="centerOnStore(store.lat, store.lng)">
+                    <div class="storeNameWrapper"><div class="storeName">{{store.name}}</div></div>
+                    <div class="storeAddress"></div>
+                    <div class="tagsWrapper">
+                        <div class="storeTags">Τιμή: {{store.price}} €</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" id="pageFooter">
+        <div><a href="about" target="_self">About</a></div>
+        <div><a href="statistics" target="_self">Statistics</a></div>
+        <div><a href="api" target="_self">API</a></div>
+    </div>
+</body>
+</html>

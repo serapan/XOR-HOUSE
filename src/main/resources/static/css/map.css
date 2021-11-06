@@ -1,0 +1,63 @@
+body {
+    display: grid;
+    grid-template-areas:
+            "header"
+            "search"
+            "center"
+            "footer";
+    grid-template-rows: 50px 80px 1fr 50px;
+    /*grid-template-columns: minmax(200px, 20%) 1fr 15%;*/
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 0;
+    background: rgba(247,247,247,0.72);
+}
+
+
+#pageHeader {
+    grid-area: header;
+}
+#pageFooter {
+    grid-area: footer;
+}
+#search {
+    grid-area: search;
+    display: grid;
+    grid-template-areas:
+        "search-box kilButton";
+    grid-template-columns: 1fr 2fr;
+    align-content: center;
+}
+
+.search-box {
+    grid-area: search-box;
+}
+
+.kilButton {
+    grid-area: kilButton;
+    max-width: 200px;
+    max-height: 30px;
+}
+
+#center {
+    grid-area: center;
+    display: grid;
+    grid-template-areas:
+        "map stores";
+    grid-template-columns: 2fr 1fr;
+    height: 78vh;
+    margin:0;
+}
+
+@media all and (max-width: 800px) {
+    #center {
+        grid-template-areas:
+                "map"
+                "stores";
+        grid-template-rows: 2fr 1fr;
+        grid-template-columns: 1fr;
+        height: 78vh;
+        width:100%;
+    }
+}
+

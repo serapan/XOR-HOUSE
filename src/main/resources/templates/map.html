@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimal-ui,initial-scale=1" />
+    <title>Cheapset</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Anton" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://code.angularjs.org/1.3.15/angular.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9L5RH8F1FMO_xAAnK1x7844Zh-vBO4ok&callback=initMap" ></script>
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
+</head>
+<body>
+<div class="header" id="pageHeader">
+    <div class="menu"><img onclick="window.location.href=window.location.origin + '/tryM'" width="50px" height="50px" src="img/mapsearch.svg"></div>
+    <div class="logo"><img onclick="window.location.href=window.location.origin + '/'" src="img/final_transparent.png" style="width:150px; height: 50px">
+    </div>
+    <div class="account">
+        <i class="far fa-user fa-2x"></i>
+    </div>
+</div>
+
+<div id="search">
+    <div class="search-box">
+        <input class="search-bar" type="text" placeholder="Ladies">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+<div id="center">
+    <div id=map ></div>
+    <div id="stores">
+    </div>
+</div>
+
+
+<div class="footer" id="pageFooter">
+
+    <div><a href="about">About</a></div>
+    <div><a href="statistics">Statistics</a></div>
+    <div><a href="api">API</a></div>
+</div></body>
+</html>
+
+<script>
+
+    var map, infoWindow;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 37.978714, lng:  23.782834},
+            zoom: 15
+        });
+        infoWindow = new google.maps.InfoWindow;
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Location found.');
+                            infoWindow.open(map);
+                            map.setCenter(pos);
+                        }, function() {
+                            handleLocationError(true, infoWindow, map.getCenter());
+                        });
+                    } else {
+                        // Browser doesn't support Geolocation
+                        handleLocationError(false, infoWindow, map.getCenter());
+                    }
+                }
+
+                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+                    infoWindow.open(map);
+                }
+</script>

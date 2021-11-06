@@ -1,0 +1,52 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background: url("../img/bk2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 50px 2fr 3fr 50px;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: margin-left .5s;
+}
+.grid {
+    grid-template-areas:
+            "header"
+            "logo"
+            "main"
+            "footer"
+}
+
+.main {
+    font-family: 'Raleway', sans-serif;
+    grid-area: main;
+    margin: 0 35% 0 35%;
+    max-height: 60%;
+    background: #ededf4;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.jumbotron{
+    padding-left: 40%;
+    padding-top: 4%;
+    padding-bottom:4%;
+   /* width:20%;*/
+}
+.button{
+    font-size: 16px;
+}
+
+.text_input{
+    font-size: 16px;
+}

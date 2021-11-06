@@ -1,0 +1,142 @@
+h1.a {
+    font-family: 'Pacifico', cursive;
+    color: orange;
+}
+
+h1.b {
+    font-family: 'Didact Gothic', sans-serif;
+    color: orange;
+    padding-top: 4%;
+    padding-bottom: 1%;
+}
+
+h1.c {
+    font-family: 'Didact Gothic', sans-serif;
+    color: orange;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+h2.a {
+    font-family: 'Didact Gothic', sans-serif;
+    color: orange;
+    padding-top: 1%;
+    padding-left: 3%;
+}
+
+h2.b {
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: 'Didact Gothic', sans-serif;
+    color: orange;
+}
+
+h3.a {
+    font-family: 'Didact Gothic', sans-serif;
+    color: orange;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.about ul {
+    padding-left: 8%;
+    padding-right: 4%;
+}
+
+.about li {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: x-large;
+    padding-bottom: 3%
+}
+
+p.a {
+    font-family: 'Didact Gothic', sans-serif;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: x-large;
+}
+
+p.b {
+    font-family: 'Didact Gothic', sans-serif;
+    padding-left: 6%;
+    padding-right: 3%;
+    font-size: x-large;
+}
+
+
+body {
+    background: url("../img/bk2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 50px 1fr 1fr 50px;
+    height: 100vh;
+    transition: margin-left .5s;
+}
+
+.grid {
+    grid-template-areas:
+            "header"
+            "logo"
+            "about"
+            "footer"
+}
+
+a.a {
+    color: ghostwhite;
+}
+
+a.b {
+    color: orange;
+}
+
+a.c {
+    color: black;
+}
+
+.info {
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 4%;
+    padding-bottom:4%;
+}
+
+.about {
+    grid-area: about;
+    background: white;
+    border-radius: 25px;
+    margin-top: 1%;
+    margin-right: 15%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+}
+
+a.a:visited {
+    color: ghostwhite;
+}
+
+a.a:hover {
+    color: ghostwhite;
+}
+
+a.b:visited {
+    color: orange;
+}
+
+a.b:hover {
+    color: orange;
+}
+
+a.c:visited {
+    color: black;
+}
+
+a.c:hover {
+    color: black;
+    text-decoration: none;
+}

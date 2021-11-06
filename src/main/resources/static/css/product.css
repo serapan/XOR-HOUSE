@@ -1,0 +1,110 @@
+body {
+    display: grid;
+    grid-template-areas:
+            "header"
+            "main"
+            "shops"
+            "footer";
+    grid-template-rows: 50px 2fr 1fr 50px;
+    grid-gap: 10px;
+    height: 100vh;
+    background: rgba(247,247,247,0.72);
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+            "photo vl title"
+            "photo vl specs";
+    grid-auto-flow: row;
+    grid-template-columns: 2fr 6px 2fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.photo {
+    grid-area: photo;
+    margin: 15% 15% 5% 15%;
+    max-height: 350px;
+    max-width: 350px;
+}
+
+.specs {
+    grid-area: specs;
+    display: grid;
+    grid-template-areas:
+        "description description"
+        "chars rate";
+    color: #404040;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-bottom: 5%;
+}
+
+.description {
+    grid-area: description;
+    margin-right: 5%;
+}
+
+.chars {
+    grid-area: chars;
+}
+
+.rate {
+    grid-area: rate;
+    color: #404040;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-bottom: 5%;
+}
+
+.star {
+    color: orange;
+}
+
+.shops {
+    grid-area: shops;
+    display: grid;
+    grid-template-areas:
+            "map stores";
+    grid-template-columns: 1fr 1fr;
+    margin: 0 7% 4% 7%;
+}
+
+.title {
+    padding-top: 10%;
+    grid-area: title;
+    text-align: center;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 7%;
+}
+
+.vl {
+    grid-area: vl;
+    border-left: 6px solid orange;
+    height: auto;
+    position: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+#stores .storeInfo .storeAddress {
+    padding-left: 0;
+}
+
+#map {
+    margin-right: 3%;
+}
+
+#stores {
+    margin-left: 20%;
+    margin-right: 10%;
+}
+

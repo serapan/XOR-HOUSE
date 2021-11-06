@@ -1,0 +1,82 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("../img/bk2.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: margin-left .5s;
+}
+
+.grid {
+    grid-template-areas:
+            "header"
+            "form-horizontal"
+            "footer";
+}
+
+.image {
+    grid-area: 1 / 1 / span 2 / span 1;
+    background: url("../img/bk2.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media only screen and (min-width: 1000px) {
+    .image {
+        background: url("../img/bk2.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+
+
+.form-horizontal {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+
+
+
+*[role="form"] h2 {
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.bubbleWrapper {
+    display: inline-flex;
+    margin-top: -30%;
+}
+
+.bubble {
+    padding: 5px 10px;
+    margin: 20px 38px;
+    background-color: ghostwhite;
+    color: darkorange;
+    border-radius: 25px;
+}
+
+

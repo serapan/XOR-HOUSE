@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimal-ui,initial-scale=1" />
+    <title>Cheapset</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Didact+Gothic|Caudex:400i|Pacifico|Source+Sans+Pro:400i|Raleway:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="css/about.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-cookies.js" type="text/javascript"></script>
+
+</head>
+
+<body ng-app="homeApp", ng-controller="homeController">
+
+<div class="grid" id="grid">
+
+    <div class="header">
+        <div class="menu"><img onclick="window.location.href=window.location.origin + '/tryM'" width="50px" height="50px" src="img/mapsearch.svg"></div>
+        <div class="logo"></div>
+        <div class="account">
+            <div class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                    <i class="far fa-user fa-2x"></i><b class="caret"></b></a>
+                <ul ng-if="!isAuthenticated()" class="dropdown-menu">
+                    <li><a class="c" href="#" data-toggle="modal" data-target="#login-modal" tabindex="-1">LOGIN</a></li>
+                    <li ><a tabindex="-1" href="signup">SIGN UP</a></li>
+                </ul>
+                <ul ng-if="isAuthenticated()" class="dropdown-menu">
+                    <li ><a ng-click="logout()" tabindex="-1" href="#">LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="LoginController" class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+                <form ng-submit="Submit()">
+                    <input type="text" name="user" ng-model="user" placeholder="Username" required>
+                    <input type="password" name="pass" ng-model="pass" placeholder="Password" required>
+                    <input type="submit" id='submit' name="login" class="login loginmodal-submit" value="Login">
+                </form>
+                <div class="login-help">
+                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img onclick="window.location.href=window.location.origin + '/'" src="img/final_transparent.png" style="width:500px; height: 200px">
+    </div>
+
+    <div class="about">
+        <div class="info">
+            <h1 class="a">ALL ABOUT CHEAPSET</h1>
+            <h1 class="b"> Πως ξεκίνησαν όλα...</h1>
+            <p class="a"> Η ομάδα μας αποτελείται από 6 φοιτητές του τμήματος Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του Εθνικού
+                    Μετσόβιου Πολυτεχνείου. Τον Σεπτέμβριο του 2018, με πηγή έμπνευσης το μαθήμα της Τεχνολογίας Λογισμικού, αποφασίσαμε να
+                    ιδρύσουμε την Cheapset, η οποία οραματίζεται να διευκολύνει την αγορά ηλεκτρονικών ειδών, μέσω μιας σύγχρονης πλατφόρμας
+                    που ανταποκρίνεται στις απαιτήσεις αγοραστών και πωλητών, προσφέροντας παράλληλα ευχρηστία και ποιότητα.
+            </p>
+            <h1 class="b"> Επιχειρησιακοί στόχοι...</h1>
+            <p class="a">  Η Cheapset είναι μια online εφαρμογή που έχει ως στόχο να δίνει τη δυνατότητα σε όλους να ανακαλύπτουν τον κόσμο της
+                τεχνολογίας και να συνεισφέρουν ενεργά στη διάδοσή της. Μέσω της Cheapset αλλάζει ριζικά η οπτική του καταναλωτή για την
+                αγορά. Ικανοποιείται στο έπακρο η ανάγκη του για εύρεση του επιθυμητού συνδυασμού ποιότητας-τιμής στο προϊόν τεχνολογίας
+                της επιλογής του, με τον πλέον άμεσο και εύκολο τρόπο. Στόχος της Cheapset είναι η συμβολή της στην εξισορρόπηση των τιμών
+                της αγοράς, η προώθηση ενός υγιούς συναγωνισμού στην ραγδαία εξελισσόμενη αγορά των προϊόντων τεχνολογίας, καθώς και η
+                παροχή υψηλού επιπέδου υπηρεσιών στο χρήστη, έχοντας ως γνώμονα την εξυπηρέτηση των συμφερόντων και αναγκών τόσο του
+                απαιτητικού καταναλωτή, όσο και της σύγχρονης επιχείρησης.
+            </p>
+        </div>
+    </div>
+
+    <div class="rightcomment">
+        <h1 class="c">"The most fascinating Online Electronics Shopping App ever"</h1>
+        <h2 class="a">- Barack Obama</h2>
+    </div>
+
+    <div class="leftcomment">
+        <h1 class="c">"2019's Best Price Comparison Online App"</h1>
+        <h2 class="a">- Forbes Magazine</h2>
+    </div>
+
+    <div class="developers">
+        <div class="title">
+            <h1 class="c"> Οι Ιδρυτές</h1>
+        </div>
+        <div class="face">
+            <img class="b" src="img/kalia.jpg">
+        </div>
+        <div class="face">
+            <img class="b" src="img/danai.jpg">
+        </div>
+        <div class="face">
+            <img class="b" src="img/bakis.jpg">
+        </div>
+        <div class="face">
+            <img class="b" src="img/sera.jpg">
+        </div>
+        <div class="face">
+            <img class="b" src="img/dionisis.jpg">
+        </div>
+        <div class="face">
+            <img class="b" src="img/gram.jpg">
+        </div>
+        <h2 class="name">Επισκόπου Κάλια</h2>
+        <h2 class="name">Ευσταθίου Δανάη</h2>
+        <h2 class="name">Μπακιρτζής Αναστάσης</h2>
+        <h2 class="name">Παναγιωτίδης Σεραφείμ</h2>
+        <h2 class="name">Σπηλιόπουλος Διονύσης</h2>
+        <h2 class="name">Τσακουμάγκου Γραμματική</h2>
+    </div>
+
+    <div class="footer">
+        <div><a href="about">About</a></div>
+        <div><a href="statistics">Statistics</a></div>
+        <div><a href="api">API</a></div>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+<script src="js/app/home.js"></script>

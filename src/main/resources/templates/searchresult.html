@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimal-ui,initial-scale=1" />
+    <title>Cheapset</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Anton" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/try_products.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="js/app/laptops.js"></script>
+    <script src="js/app/sideNav.js"></script>
+    <!-- Bootstrap CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="consumeProductsApp">
+
+
+<div id="filterPopUp">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav('filterPopUp')">&times;</a>
+    <div class="filter-title">Εύρος Τιμών</div>
+
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+
+    <div class="filter-title">Κατασκευαστής</div>
+
+    <div class="filter-title">Επεξεργαστής</div>
+
+    <div class="filter-title">Μέγεθος Μνήμης</div>
+
+
+    <div class="filter-title">Τύπος Δίσκου</div>
+
+    <div class="filter-title">Χωρητικότητα Δίσκου</div>
+</div>
+
+<div class="header" id="pageHeader">
+    <div class="menu"><img onclick="window.location.href=window.location.origin + '/tryM'" width="50px" height="50px" src="img/mapsearch.svg"></div>
+    <div class="logo"><img onclick="window.location.href=window.location.origin + '/'" src="img/final_transparent.png" style="width:150px; height: 50px">
+    </div>
+    <div class="account">
+        <div class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <i class="far fa-user fa-2x"></i><b class="caret"></b></a>
+            <ul ng-if="!isAuthenticated()" class="dropdown-menu">
+                <li><a class="c" href="#" data-toggle="modal" data-target="#login-modal" tabindex="-1">LOGIN</a></li>
+                <li ><a tabindex="-1" href="signup">SIGN UP</a></li>
+            </ul>
+            <ul ng-if="isAuthenticated()" class="dropdown-menu">
+                <li ><a ng-click="logout()" tabindex="-1" href="#">LOG OUT</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="LoginController" class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Login to Your Account</h1><br>
+            <form ng-submit="Submit()">
+                <input type="text" name="user" ng-model="user" placeholder="Username" required>
+                <input type="password" name="pass" ng-model="pass" placeholder="Password" required>
+                <input type="submit" id='submit' name="login" class="login loginmodal-submit" value="Login">
+            </form>
+            <div class="login-help">
+                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="search">
+    <div class="search-box">
+        <input class="search-bar" type="text" placeholder="Ladies">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search fa-lg"></i>
+        </a>
+    </div>
+
+    <div id="filtersButton" onclick="openNav('filterPopUp')">Φίλτρα</div>
+
+</div>
+
+
+<article id="mainArticle" ng-controller="ProductsController">
+    <div class="products">
+        <div class="productCard" ng-repeat="product in products.products">
+            <div ng-click="goToProduct(product.id)">
+                <div class="circle">
+                    <img width="140px" height="140px" src="img/{{product.category}}.svg">
+                </div>
+                <div class="modelName">
+                    <h4>{{product.name}}</h4>
+                </div>
+                <ul class="specs" ng-repeat="(key, data) in product.extraData">
+                    <h5>{{key | uppercase}}: {{data}}</h5>
+                </ul>
+                <div class="price" style="background-color: #2cacff; padding: 10px;">{{product.price}} <i class="fas fa-euro-sign"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="showMore" ng-click="showMore()">
+        <div class="seeMore">ΔΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ ({{total - counter}})</div>
+    </div>
+
+</article>
+
+<div id="filters">
+    <div class="filter-title">Εύρος Τιμών</div>
+
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+
+    <div class="filter-title">Κατασκευαστής</div>
+
+    <div class="filter-title">Επεξεργαστής</div>
+
+    <div class="filter-title">Μέγεθος Μνήμης</div>
+
+
+    <div class="filter-title">Τύπος Δίσκου</div>
+
+    <div class="filter-title">Χωρητικότητα Δίσκου</div>
+
+
+</div>
+<div id="siteAds"></div>
+
+
+<div class="footer" id="pageFooter">
+
+    <div><a href="about">About</a></div>
+    <div><a href="statistics">Statistics</a></div>
+    <div><a href="api">API</a></div>
+</div></body>
+</html>

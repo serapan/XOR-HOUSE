@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+
+<script>
+
+    if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        window.location.href=window.location.origin + "/mobile";
+    } else {
+       window.location.href=window.location.origin + "/wearesorry"
+    }
+
+</script>
+
+</body>
+</html>

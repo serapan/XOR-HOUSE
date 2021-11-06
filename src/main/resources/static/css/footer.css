@@ -1,0 +1,24 @@
+.footer {
+    grid-area: footer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    display: grid;
+    background: rgba(100, 100, 100, 0.67);
+    color: #0a0a0a;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 0.3333fr));
+    justify-items: center;
+    align-items: center;
+}
+.footer a:visited {
+    color: #0a0a0a;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: #0a0a0a;
+}
+
+.footer a {
+    color: #0a0a0a;
+    text-decoration: none;
+}

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>gr.ntua.ece.softeng18b</OriginalElement>
+  <nodes>
+    <node x="1550.0950396825401" y="788.0">gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter.UserCredentials</node>
+    <node x="21.5" y="501.0">gr.ntua.ece.softeng18b.repositories.ProductRepository</node>
+    <node x="722.0" y="1748.0">gr.ntua.ece.softeng18b.controller.UploadController</node>
+    <node x="1093.8283730158732" y="290.5">gr.ntua.ece.softeng18b.repositories.RoleRepository</node>
+    <node x="360.5" y="1748.0">gr.ntua.ece.softeng18b.Softeng18bApplication</node>
+    <node x="643.5" y="523.0">gr.ntua.ece.softeng18b.repositories.StoreRepository</node>
+    <node x="734.0000000000002" y="1352.0">gr.ntua.ece.softeng18b.model.Info</node>
+    <node x="2038.8500000000004" y="1406.5">gr.ntua.ece.softeng18b.SecurityTokenConfig</node>
+    <node x="1322.3418650793658" y="1053.0">gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter</node>
+    <node x="330.6966269841274" y="169.0">gr.ntua.ece.softeng18b.model.Store</node>
+    <node x="0.0" y="1748.0">gr.ntua.ece.softeng18b.controller.IndexController</node>
+    <node x="1181.0" y="1748.0">gr.ntua.ece.softeng18b.QuickstartSample</node>
+    <node x="2373.341865079366" y="787.5">gr.ntua.ece.softeng18b.services.UserDetailsServiceImpl</node>
+    <node x="1253.8283730158732" y="191.0">gr.ntua.ece.softeng18b.model.User</node>
+    <node x="280.23313492063505" y="943.0">gr.ntua.ece.softeng18b.model.Product</node>
+    <node x="2250.841865079366" y="567.0">gr.ntua.ece.softeng18b.repositories.UserRepository</node>
+    <node x="1119.9750000000008" y="0.0">gr.ntua.ece.softeng18b.model.Role</node>
+    <node x="797.5" y="810.0">gr.ntua.ece.softeng18b.controller.api</node>
+    <node x="875.7500000000002" y="1652.0">gr.ntua.ece.softeng18b.repositories.InfoRepository</node>
+    <node x="1969.938293650794" y="766.0">gr.ntua.ece.softeng18b.security.SecurityConstants</node>
+    <node x="232.0" y="1849.0">gr.ntua.ece.softeng18b.ServletInitializer</node>
+    <node x="2037.341865079366" y="1053.0">gr.ntua.ece.softeng18b.security.JwtAuthorizationFilter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="gr.ntua.ece.softeng18b.repositories.RoleRepository" target="gr.ntua.ece.softeng18b.model.Role">
+      <point x="0.0" y="-14.5" />
+      <point x="1163.8283730158732" y="149.0" />
+      <point x="1174.3500000000008" y="149.0" />
+      <point x="-18.125" y="59.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.SecurityTokenConfig" target="gr.ntua.ece.softeng18b.services.UserDetailsServiceImpl">
+      <point x="157.20000000000005" y="-70.5" />
+      <point x="2392.55" y="1332.0" />
+      <point x="2660.841865079366" y="1332.0" />
+      <point x="2660.841865079366" y="923.0" />
+      <point x="2655.091865079366" y="923.0" />
+      <point x="120.75" y="37.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.repositories.InfoRepository" target="gr.ntua.ece.softeng18b.model.Info">
+      <point x="-93.75" y="-25.5" />
+      <point x="969.5000000000002" y="1627.0" />
+      <point x="930.0000000000002" y="1627.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.SecurityTokenConfig" target="gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter">
+      <point x="-157.20000000000005" y="-70.5" />
+      <point x="2078.1500000000005" y="1332.0" />
+      <point x="1496.0918650793658" y="1332.0" />
+      <point x="-173.75" y="59.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.model.Store">
+      <point x="-30.0" y="-14.5" />
+      <point x="820.0" y="736.0" />
+      <point x="622.0" y="736.0" />
+      <point x="622.0" y="481.0" />
+      <point x="576.1966269841274" y="481.0" />
+      <point x="0.0" y="136.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter" target="gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter.UserCredentials">
+      <point x="-231.66666666666663" y="-59.5" />
+      <point x="1438.175198412699" y="923.0" />
+      <point x="1588.3450396825401" y="923.0" />
+      <point x="-38.25" y="36.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.repositories.StoreRepository" target="gr.ntua.ece.softeng18b.model.Store">
+      <point x="0.0" y="-80.5" />
+      <point x="850.0" y="481.0" />
+      <point x="772.5966269841275" y="481.0" />
+      <point x="196.4000000000001" y="136.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.services.UserDetailsServiceImpl" target="gr.ntua.ece.softeng18b.repositories.UserRepository">
+      <point x="-80.5" y="-37.0" />
+      <point x="2453.841865079366" y="746.0" />
+      <point x="2489.341865079366" y="746.0" />
+      <point x="79.5" y="36.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.model.Info" target="gr.ntua.ece.softeng18b.model.Product">
+      <point x="-73.5" y="-125.0" />
+      <point x="856.5000000000002" y="1312.0" />
+      <point x="394.23313492063505" y="1312.0" />
+      <point x="-114.0" y="169.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.model.Product" target="gr.ntua.ece.softeng18b.controller.api">
+      <point x="-57.00000000000023" y="-169.5" />
+      <point x="451.2331349206348" y="903.0" />
+      <point x="820.0" y="903.0" />
+      <point x="-30.0" y="14.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.model.User">
+      <point x="30.0" y="-14.5" />
+      <point x="880.0" y="736.0" />
+      <point x="1180.9750000000008" y="736.0" />
+      <point x="1180.9750000000008" y="461.0" />
+      <point x="1290.0283730158733" y="461.0" />
+      <point x="-144.79999999999995" y="114.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.model.User" target="gr.ntua.ece.softeng18b.model.Role">
+      <point x="90.5" y="-114.0" />
+      <point x="1525.3283730158732" y="139.0" />
+      <point x="1246.8500000000004" y="139.0" />
+      <point x="54.37499999999977" y="59.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.repositories.UserRepository" target="gr.ntua.ece.softeng18b.model.User">
+      <point x="0.0" y="-36.5" />
+      <point x="2409.841865079366" y="481.0" />
+      <point x="1507.2283730158733" y="481.0" />
+      <point x="72.40000000000009" y="114.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.model.Info">
+      <point x="15.0" y="14.5" />
+      <point x="865.0" y="923.0" />
+      <point x="992.2500000000002" y="923.0" />
+      <point x="992.2500000000002" y="1332.0" />
+      <point x="954.5000000000002" y="1332.0" />
+      <point x="24.5" y="-125.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.repositories.StoreRepository">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="80.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.SecurityTokenConfig" target="gr.ntua.ece.softeng18b.security.JwtAuthorizationFilter">
+      <point x="0.0" y="-70.5" />
+      <point x="2235.3500000000004" y="1312.0" />
+      <point x="2338.341865079366" y="1312.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.services.UserDetailsServiceImpl" target="gr.ntua.ece.softeng18b.model.User">
+      <point x="80.5" y="-37.0" />
+      <point x="2614.841865079366" y="746.0" />
+      <point x="2579.341865079366" y="746.0" />
+      <point x="2579.341865079366" y="471.0" />
+      <point x="1579.6283730158732" y="471.0" />
+      <point x="144.79999999999995" y="114.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.repositories.InfoRepository">
+      <point x="45.0" y="14.5" />
+      <point x="895.0" y="903.0" />
+      <point x="1311.8418650793658" y="903.0" />
+      <point x="1311.8418650793658" y="1627.0" />
+      <point x="1157.0000000000002" y="1627.0" />
+      <point x="93.75" y="-25.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.repositories.ProductRepository" target="gr.ntua.ece.softeng18b.model.Product">
+      <point x="-147.5" y="102.5" />
+      <point x="169.0" y="923.0" />
+      <point x="337.2331349206348" y="923.0" />
+      <point x="-171.00000000000023" y="-169.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.controller.api">
+      <point x="-45.0" y="14.5" />
+      <point x="805.0" y="859.0" />
+      <point x="777.5" y="859.0" />
+      <point x="777.5" y="824.5" />
+      <point x="-52.5" y="-0.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter" target="gr.ntua.ece.softeng18b.security.SecurityConstants">
+      <point x="231.66666666666663" y="-59.5" />
+      <point x="1901.5085317460325" y="923.0" />
+      <point x="2023.438293650794" y="923.0" />
+      <point x="-53.5" y="58.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.security.JwtAuthorizationFilter" target="gr.ntua.ece.softeng18b.services.UserDetailsServiceImpl">
+      <point x="200.66666666666674" y="-59.5" />
+      <point x="2539.0085317460325" y="923.0" />
+      <point x="2494.091865079366" y="923.0" />
+      <point x="-40.25" y="37.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.model.Info" target="gr.ntua.ece.softeng18b.model.Store">
+      <point x="-171.5" y="-125.0" />
+      <point x="758.5000000000002" y="1332.0" />
+      <point x="0.0" y="1332.0" />
+      <point x="0.0" y="471.0" />
+      <point x="379.79662698412733" y="471.0" />
+      <point x="-196.4000000000001" y="136.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.security.JwtAuthorizationFilter" target="gr.ntua.ece.softeng18b.security.SecurityConstants">
+      <point x="-200.66666666666663" y="-59.5" />
+      <point x="2137.6751984126995" y="923.0" />
+      <point x="2130.438293650794" y="923.0" />
+      <point x="53.5" y="58.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.model.Info" target="gr.ntua.ece.softeng18b.model.User">
+      <point x="122.5" y="-125.0" />
+      <point x="1052.5000000000002" y="1322.0" />
+      <point x="1202.9750000000008" y="1322.0" />
+      <point x="1202.9750000000008" y="471.0" />
+      <point x="1362.4283730158731" y="471.0" />
+      <point x="-72.40000000000009" y="114.0" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.ServletInitializer" target="gr.ntua.ece.softeng18b.Softeng18bApplication">
+      <point x="0.0" y="-25.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.model.Product">
+      <point x="0.0" y="14.5" />
+      <point x="850.0" y="923.0" />
+      <point x="679.2331349206348" y="923.0" />
+      <point x="170.99999999999977" y="-169.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.model.Role">
+      <point x="15.0" y="-14.5" />
+      <point x="865.0" y="726.0" />
+      <point x="1067.0" y="726.0" />
+      <point x="1067.0" y="149.0" />
+      <point x="1138.1000000000008" y="149.0" />
+      <point x="-54.375" y="59.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.repositories.UserRepository">
+      <point x="45.0" y="-14.5" />
+      <point x="895.0" y="746.0" />
+      <point x="2330.341865079366" y="746.0" />
+      <point x="-79.5" y="36.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter.UserCredentials" target="gr.ntua.ece.softeng18b.security.JwtAuthenticationFilter">
+      <point x="38.25000000000006" y="36.5" />
+      <point x="1664.8450396825401" y="923.0" />
+      <point x="1669.8418650793658" y="923.0" />
+      <point x="0.0" y="-59.5" />
+    </edge>
+    <edge source="gr.ntua.ece.softeng18b.controller.api" target="gr.ntua.ece.softeng18b.repositories.ProductRepository">
+      <point x="-45.0" y="-14.5" />
+      <point x="805.0" y="746.0" />
+      <point x="463.9999999999998" y="746.0" />
+      <point x="147.49999999999977" y="102.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3687830709859458" x="1637.77761484146" y="1205.0272581132028" />
+  <SelectedNodes>
+    <node>gr.ntua.ece.softeng18b.Softeng18bApplication</node>
+    <node>gr.ntua.ece.softeng18b.SecurityTokenConfig</node>
+    <node>gr.ntua.ece.softeng18b.ServletInitializer</node>
+    <node>gr.ntua.ece.softeng18b.QuickstartSample</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

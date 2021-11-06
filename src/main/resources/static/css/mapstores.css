@@ -1,0 +1,47 @@
+#map {
+    grid-area: map;
+    background-color: #f1f7ff;
+}
+
+#stores {
+    grid-area: stores;
+    background-color: #4C5656;
+    overflow: scroll;
+    display: block;
+}
+
+#stores .storeInfo {
+    height: 95px;
+    margin: 15px;
+    border-top-left-radius: 25px;
+    background-color: whitesmoke;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+#stores .storeInfo .storeNameWrapper {
+    background-color: #ff7f05;
+    border-top-left-radius: 25px;
+    padding-bottom: 10px;
+}
+#stores .storeInfo .storeName {
+    padding-left: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    padding-top: 7px;
+}
+
+#stores .storeInfo .storeAddress {
+    padding-left: 20px;
+    font-family: "Courier New", monospace;
+    padding-top: 10px;
+}
+
+#stores .storeInfo .storeTags {
+    float: right;
+    padding-right: 20px;
+}
+
+#stores .storeInfo:hover {
+    cursor: pointer;
+}
